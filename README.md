@@ -1,0 +1,1 @@
+[![CI Tests](https://github.com/ULL-ESIT-INF-DSI-2425/prct08-filesystem-funko-app-alu0101313313/actions/workflows/ci.yml/badge.svg)](https://github.com/ULL-ESIT-INF-DSI-2425/prct08-filesystem-funko-app-alu0101313313/actions/workflows/ci.yml)  
