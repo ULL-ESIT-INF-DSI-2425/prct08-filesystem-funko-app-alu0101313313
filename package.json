@@ -7,7 +7,8 @@
     "eslint": "eslint .",
     "prettier": "prettier --write .",
     "doc": "typedoc",
-    "vitest": "npx vitest run"
+    "vitest": "vitest run",
+    "coverage": "vitest run --coverage --coverage.include 'src/*.ts'"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   "description": "",
   "devDependencies": {
     "@eslint/js": "^9.23.0",
+    "@vitest/coverage-v8": "^3.0.9",
     "eslint": "^9.23.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-tsdoc": "^0.4.0",
