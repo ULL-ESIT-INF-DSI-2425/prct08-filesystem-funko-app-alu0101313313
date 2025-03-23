@@ -1,0 +1,9 @@
+export enum GenreFunko {
+  MOVIE = 'MOVIE',
+  SERIES = 'SERIES',
+  VIDEOGAME = 'VIDEOGAME',
+  ANIMATION = 'ANIMATION',
+  SPORT = 'SPORT',
+  MUSIC = 'MUSIC',
+  OTHER = 'OTHER',
+}
