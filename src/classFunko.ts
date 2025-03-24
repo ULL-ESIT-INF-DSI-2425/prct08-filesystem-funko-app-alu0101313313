@@ -2,6 +2,21 @@ import chalk from "chalk";
 import { typeFunko } from "./typeFunko.js";
 import { GenreFunko } from "./enumGenreFunko.js";
 
+/**
+ * Clase Funko
+ * 
+ * Clase que representa un Funko
+ * @param id_ - Identificador del Funko
+ * @param name_ - Nombre del Funko
+ * @param description_ - Descripción del Funko
+ * @param category_ - Categoría del Funko
+ * @param genre_ - Género del Funko
+ * @param franchise_ - Franquicia del Funko
+ * @param numberID_ - Número de identificación del Funko
+ * @param exclusive_ - Si es exclusivo o no
+ * @param specialCharacteristics_ - Características especiales del Funko
+ * @param price_ - Precio del Funko
+ */
 export class Funko {
 
   accessor id_: number;
@@ -15,6 +30,19 @@ export class Funko {
   accessor specialCharacteristics_: string[];
   accessor price_: number;
   
+  /**
+   * The constructor of the class Funko
+ * @param id - Identificador del Funko
+ * @param name - Nombre del Funko
+ * @param description - Descripción del Funko
+ * @param category - Categoría del Funko
+ * @param genre - Género del Funko
+ * @param franchise - Franquicia del Funko
+ * @param numberID - Número de identificación del Funko
+ * @param exclusive - Si es exclusivo o no
+ * @param specialCharacteristics - Características especiales del Funko
+ * @param price - Precio del Funko
+   */
   constructor(
     id: number,
     name: string,
@@ -39,6 +67,10 @@ export class Funko {
     this.price_ = price;
   }
 
+  /**
+   * A method that returns the market value of the Funko
+   * @returns the market value of the Funko
+   */
   getMarketValue(): string {
     if (this.price_ > 100) {
       return "Very High";
@@ -52,8 +84,9 @@ export class Funko {
   }
   /**
    * Método que muestra la información del Funko
+   * @returns if the information was shown correctly
    */
-  showInfo() {
+  showInfo(): true {
     console.log(chalk.green("ID: " + this.id_));
     console.log(chalk.green("Name: " + this.name_));
     console.log(chalk.green("Description: " + this.description_));
