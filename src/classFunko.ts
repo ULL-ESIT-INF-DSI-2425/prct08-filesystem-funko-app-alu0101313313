@@ -4,7 +4,7 @@ import { GenreFunko } from "./enumGenreFunko.js";
 
 /**
  * Clase Funko
- * 
+ *
  * Clase que representa un Funko
  * @param id_ - Identificador del Funko
  * @param name_ - Nombre del Funko
@@ -18,7 +18,6 @@ import { GenreFunko } from "./enumGenreFunko.js";
  * @param price_ - Precio del Funko
  */
 export class Funko {
-
   accessor id_: number;
   accessor name_: string;
   accessor description_: string;
@@ -29,19 +28,19 @@ export class Funko {
   accessor exclusive_: boolean;
   accessor specialCharacteristics_: string[];
   accessor price_: number;
-  
+
   /**
    * The constructor of the class Funko
- * @param id - Identificador del Funko
- * @param name - Nombre del Funko
- * @param description - Descripción del Funko
- * @param category - Categoría del Funko
- * @param genre - Género del Funko
- * @param franchise - Franquicia del Funko
- * @param numberID - Número de identificación del Funko
- * @param exclusive - Si es exclusivo o no
- * @param specialCharacteristics - Características especiales del Funko
- * @param price - Precio del Funko
+   * @param id - Identificador del Funko
+   * @param name - Nombre del Funko
+   * @param description - Descripción del Funko
+   * @param category - Categoría del Funko
+   * @param genre - Género del Funko
+   * @param franchise - Franquicia del Funko
+   * @param numberID - Número de identificación del Funko
+   * @param exclusive - Si es exclusivo o no
+   * @param specialCharacteristics - Características especiales del Funko
+   * @param price - Precio del Funko
    */
   constructor(
     id: number,
@@ -53,7 +52,7 @@ export class Funko {
     numberID: number,
     exclusive: boolean,
     specialCharacteristics: string[],
-    price: number
+    price: number,
   ) {
     this.id_ = id;
     this.name_ = name;
@@ -101,18 +100,24 @@ export class Funko {
     });
     switch (this.getMarketValue()) {
       case "Very High":
-        console.log(chalk.green("Market Value: " + chalk.green(this.getMarketValue())));
+        console.log(
+          chalk.green("Market Value: " + chalk.green(this.getMarketValue())),
+        );
         break;
       case "High":
         console.log(
-          chalk.green("Market Value: " + chalk.yellow(this.getMarketValue()))
+          chalk.green("Market Value: " + chalk.yellow(this.getMarketValue())),
         );
         break;
       case "Medium":
-        console.log(chalk.green("Market Value: " + chalk.cyan(this.getMarketValue())));
+        console.log(
+          chalk.green("Market Value: " + chalk.cyan(this.getMarketValue())),
+        );
         break;
       case "Low":
-        console.log(chalk.green("Market Value: " + chalk.red(this.getMarketValue())));
+        console.log(
+          chalk.green("Market Value: " + chalk.red(this.getMarketValue())),
+        );
         break;
     }
     return true;

@@ -21,11 +21,19 @@ export class User {
    * @returns true if the funko was added correctly
    */
   addFunko(funko: Funko): boolean {
-    if(this.funkos.addFunko(funko)){
-      console.log(chalk.green(`Funko ${funko.name_} añadido correctamente a la colección de ${this.name}`));
+    if (this.funkos.addFunko(funko)) {
+      console.log(
+        chalk.green(
+          `Funko ${funko.name_} añadido correctamente a la colección de ${this.name}`,
+        ),
+      );
       return true;
     } else {
-      console.log(chalk.red(`Error al añadir funko ${funko.name_} a la colección de ${this.name}`));
+      console.log(
+        chalk.red(
+          `Error al añadir funko ${funko.name_} a la colección de ${this.name}`,
+        ),
+      );
       return false;
     }
   }
@@ -36,11 +44,19 @@ export class User {
    * @returns true if the funko was updated correctly
    */
   updateFunko(funko: Funko): boolean {
-    if(this.funkos.updateFunko(funko)){
-      console.log(chalk.green(`Funko ${funko.name_} actualizado correctamente en la colección de ${this.name}`));
+    if (this.funkos.updateFunko(funko)) {
+      console.log(
+        chalk.green(
+          `Funko ${funko.name_} actualizado correctamente en la colección de ${this.name}`,
+        ),
+      );
       return true;
     } else {
-      console.log(chalk.red(`Error al actualizar funko ${funko.name_} en la colección de ${this.name}`));
+      console.log(
+        chalk.red(
+          `Error al actualizar funko ${funko.name_} en la colección de ${this.name}`,
+        ),
+      );
       return false;
     }
   }
@@ -51,11 +67,17 @@ export class User {
    * @returns true if the funko was removed correctly
    */
   removeFunko(id: number): boolean {
-    if(this.funkos.removeFunko(id)){  
-      console.log(chalk.green(`Funko eliminado correctamente de la colección de ${this.name}`));
+    if (this.funkos.removeFunko(id)) {
+      console.log(
+        chalk.green(
+          `Funko eliminado correctamente de la colección de ${this.name}`,
+        ),
+      );
       return true;
     } else {
-      console.log(chalk.red(`Error al eliminar el funko de la colección de ${this.name}`));
+      console.log(
+        chalk.red(`Error al eliminar el funko de la colección de ${this.name}`),
+      );
       return false;
     }
   }
@@ -87,10 +109,14 @@ export class User {
    */
   showFunko(id: number): boolean {
     const funko = this.funkos.getFunko(id);
-    if(funko){
+    if (funko) {
       funko.showInfo();
     } else {
-      console.log(chalk.red(`Funko con id ${id} no encontrado en la colección de ${this.name}`));
+      console.log(
+        chalk.red(
+          `Funko con id ${id} no encontrado en la colección de ${this.name}`,
+        ),
+      );
       return false;
     }
     return true;

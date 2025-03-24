@@ -11,10 +11,10 @@ export class UserJSON extends User {
    * @param name - The name of the User
    * @returns An instance of the class UserJSON
    */
-  constructor(name: string){
+  constructor(name: string) {
     super(name);
-    if(!fs.existsSync(`./users/${name.toLowerCase()}`)){
-      console.log('Creating directory:' + name);
+    if (!fs.existsSync(`./users/${name.toLowerCase()}`)) {
+      console.log("Creating directory:" + name);
       fs.mkdirSync(`./users/${name.toLowerCase()}`);
     }
     const files = fs.readdirSync(`./users/${name.toLowerCase()}`);
@@ -24,15 +24,16 @@ export class UserJSON extends User {
       this.funkos.addFunko(
         new Funko(
           funko.id,
-          funko.name, 
+          funko.name,
           funko.description,
           funko.category,
-          funko.genre, 
+          funko.genre,
           funko.franchise,
           funko.numberID,
           funko.exclusive,
           funko.specialCharacteristic,
-          funko.price)
+          funko.price,
+        ),
       );
     });
   }
@@ -43,15 +44,15 @@ export class UserJSON extends User {
    * @returns true if the Funko was added correctly
    */
   addFunko(funko: Funko): boolean {
-    const result = super.addFunko(funko)
-    if(result){
+    const result = super.addFunko(funko);
+    if (result) {
       fs.writeFile(
-        `./users/${this.name.toLowerCase()}/${funko.id_}.json`, 
-        JSON.stringify(funko), 
+        `./users/${this.name.toLowerCase()}/${funko.id_}.json`,
+        JSON.stringify(funko),
         (err) => {
-          if(err) 
-            throw err;
-        });
+          if (err) throw err;
+        },
+      );
     }
     return true;
   }
@@ -63,11 +64,9 @@ export class UserJSON extends User {
    */
   removeFunko(id: number): boolean {
     const result = super.removeFunko(id);
-    if(result){
-      fs.unlink(`./users/${this.name.toLowerCase()}/${id}.json`, 
-      (err) => {
-        if(err) 
-          throw err;
+    if (result) {
+      fs.unlink(`./users/${this.name.toLowerCase()}/${id}.json`, (err) => {
+        if (err) throw err;
       });
     }
     return result;
@@ -80,10 +79,10 @@ export class UserJSON extends User {
    */
   updateFunko(funko: Funko): boolean {
     const result = super.updateFunko(funko);
-    if(result){
+    if (result) {
       fs.writeFileSync(
-        `./users/${this.name.toLowerCase()}/${funko.id_}.json`, 
-        JSON.stringify(funko)
+        `./users/${this.name.toLowerCase()}/${funko.id_}.json`,
+        JSON.stringify(funko),
       );
     }
     return result;

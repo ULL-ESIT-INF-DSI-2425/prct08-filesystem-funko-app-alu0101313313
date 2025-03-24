@@ -5,7 +5,6 @@ import { Funko } from "./classFunko.js";
  * @param collection_ - A map of Funko Pops in the collection.
  */
 export class FunkoCollection {
-
   protected collection_: Map<number, Funko>;
 
   /**
@@ -72,5 +71,4 @@ export class FunkoCollection {
       callback(funko);
     });
   }
-
 }
