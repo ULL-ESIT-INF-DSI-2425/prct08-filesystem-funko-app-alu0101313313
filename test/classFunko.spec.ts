@@ -86,6 +86,9 @@ describe('class Funko tests', () => {
     expect(funko4.getMarketValue()).toBe('Low');
   });
 
+  test('should have a method to show the funko information', () => {
+    expect(funko1.showInfo()).toBe(true);
+  });
 
 });
 
